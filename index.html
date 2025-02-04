@@ -53,3 +53,144 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<style>
+  /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #181818;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #ffcc00;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f1f1f1;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+.hero {
+  position: relative;
+  background-image: url('https://via.placeholder.com/1600x800?text=Solo+Leveling');
+  background-size: cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #ffcc00;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffd700;
+}
+
+.content {
+  padding: 40px 10%;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.feature {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+}
+
+.feature h3 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #181818;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+footer p {
+  font-size: 1rem;
+}
+</style>
+
+<script> // Example of a simple button interaction
+document.getElementById("callToAction").addEventListener("click", function() {
+  alert("Get ready for the adventure! The journey of Jinwoo awaits you.");
+}); </script>
+
+
+
+
+
+
