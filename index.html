@@ -4,11 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leveling - Anime Theme</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; background-color: #0a1543; color: #f1f1f1; }
+    header { background-color: #181818; padding: 20px; text-align: center; }
+    header h1 { color: #d4d9ff; font-size: 3rem; letter-spacing: 2px; }
+    nav ul { list-style: none; margin-top: 10px; }
+    nav ul li { display: inline; margin: 0 15px; }
+    nav ul li a { text-decoration: none; color: #f1f1f1; font-weight: bold; }
+    nav ul li a:hover { color: #aaaaaa; }
+    .hero { position: relative; background: url('https://raw.githubusercontent.com/pberzabal/practice/refs/heads/main/timeless-majesty-an-enchanting-portrait-of-the-majestic-grandeur-and-resilience-of-an-ancient-gnarled-tree-standing-tall-amidst-the-ages-ai-generated-free-photo.jpg') center/cover no-repeat; height: 80vh; display: flex; justify-content: center; align-items: center; }
+    .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); text-align: center; color: #fff; padding: 20px; }
+    .hero h2 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.5rem; margin-bottom: 20px; }
+    button { background-color: #1446ff; color: #121212; border: none; padding: 10px 20px; font-size: 1.2rem; cursor: pointer; border-radius: 5px; transition: background-color 0.3s ease; }
+    button:hover { background-color: #aaaaaa; }
+    .content { padding: 40px 10%; }
+    .features { display: flex; justify-content: space-around; }
+    .feature { background-color: #1c1c1c; padding: 20px; border-radius: 8px; width: 30%; text-align: center; }
+    .feature h3 { color: #d4d9ff; margin-bottom: 10px; }
+    footer { background-color: #181818; color: #f1f1f1; text-align: center; padding: 15px; }
+    footer p { font-size: 1rem; }
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2.5rem; }
+      .hero p { font-size: 1.2rem; }
+      .content { padding: 20px; }
+      .features { flex-direction: column; align-items: center; }
+      .feature { width: 80%; margin-bottom: 20px; }
+      nav ul li { display: block; margin: 10px 0; }
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <center><h1>Leveling</h1></center>
+    <h1>Leveling</h1>
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
@@ -22,208 +52,38 @@
 
   <section class="hero">
     <div class="overlay">
-      <h2> Skill Tree </h2>
+      <h2>Skill Tree</h2>
       <p>Enter your class</p>
       <button id="callToAction">Start Advancing</button>
     </div>
   </section>
+
   <section class="content">
     <div class="features">
       <div class="feature">
         <h3>Base Class</h3>
-        <p>Base classes are usually broad, general categories that provide basic abilities and skills. They serve as the foundation for later progression and usually have limited skills compared to advanced and master classes.</p>
+        <p>Base classes are the foundation with basic abilities and skills.</p>
       </div>
       <div class="feature">
         <h3>Advance Class</h3>
-        <p>provides with more specialized abilities and roles that offer deeper role. After reaching a certain level or milestone, one can typically choose an Advanced Class that aligns with the role style they prefer. This represents a significant step in the character's development and often brings a lot more strategic depth to skills.</p>
+        <p>Advanced classes offer specialized abilities and deeper roles.</p>
       </div>
       <div class="feature">
         <h3>Master Class</h3>
-        <p>Are the peak of a character’s potential and are often tied to the most powerful abilities and traits. These classes are typically harder to unlock and offer unique skills. Players who reach this level of progression are often able to take on the most difficult content in the system.</p>
+        <p>Master classes provide the peak of character abilities and powerful traits.</p>
       </div>
     </div>
   </section>
+
   <footer>
-    <p>&copy; 2025 Skill Tree </p>
+    <p>&copy; 2025 Skill Tree</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("callToAction").addEventListener("click", function() {
+      alert("Loading your skill points...");
+    });
+  </script>
+
 </body>
 </html>
-
-<style>
-  /* General Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0a1543;
-    color: #f1f1f1;
-    line-height: 1.2;
-  }
-
-  header {
-    background-color: #181818;
-    padding: 20px;
-    text-align: center;
-  }
-
-  header h1 {
-    color: #d4d9ff;
-    font-size: 3rem;
-    letter-spacing: 2px;
-  }
-
-  nav ul {
-    list-style: none;
-    margin-top: 10px;
-  }
-
-  nav ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #f1f1f1;
-    font-weight: bold;
-  }
-
-  nav ul li a:hover {
-    color: #aaaaaa;
-  }
-
-  .hero {
-    position: relative;
-    background-image: url('https://raw.githubusercontent.com/pberzabal/practice/refs/heads/main/timeless-majesty-an-enchanting-portrait-of-the-majestic-grandeur-and-resilience-of-an-ancient-gnarled-tree-standing-tall-amidst-the-ages-ai-generated-free-photo.jpg'); /* Update image URL */
-    background-size: cover;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-  }
-
-  .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-
-  .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-
-  button {
-    background-color: #1446ff;
-    color: #121212;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #aaaaaa;
-  }
-
-  .content {
-    padding: 40px 10%;
-  }
-
-  .features {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-
-  .feature {
-    background-color: #1c1c1c;
-    padding: 20px;
-    border-radius: 8px;
-    width: 30%;
-    text-align: center;
-  }
-
-  .feature h3 {
-    color: #d4d9ff;
-    margin-bottom: 10px;
-  }
-
-  footer {
-    background-color: #181818;
-    color: #f1f1f1;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-  }
-  .content { 
-    padding: 40px;
-    background-color: transparent;
-  }
-
-  footer p {
-    font-size: 1rem;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero h2 {
-      font-size: 2.5rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-    }
-
-    .content {
-      padding: 20px;
-    }
-
-    .features {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .feature {
-      width: 80%;
-      margin-bottom: 20px;
-    }
-
-    nav ul li {
-      display: block;
-      margin: 10px 0;
-    }
-  }
-</style>
-
-<script>
-  document.getElementById("callToAction").addEventListener("click", function() {
-    alert("Loading your skill points...");
-    // You can replace this with other actions, like redirecting to another page, opening a modal, etc.
-  });
-</script>
-
-
-
-
-
-
