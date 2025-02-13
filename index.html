@@ -4,28 +4,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leveling - Anime Theme</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Arial', sans-serif; background: rgba(10, 21, 67, 0); color: #f1f1f1; }
-    header { background: #181818; padding: 20px; text-align: center; }
-    h1 { font-size: 3rem; color: #d4d9ff; }
-    nav ul { list-style: none; margin-top: 10px; }
-    nav ul li { display: inline; margin: 0 15px; }
-    nav a { color: #f1f1f1; text-decoration: none; font-weight: bold; }
-    nav a:hover { color: #b5e2fa; }
-    .hero { background: url('https://raw.githubusercontent.com/pberzabal/practice/refs/heads/main/timeless-majesty-an-enchanting-portrait-of-the-majestic-grandeur-and-resilience-of-an-ancient-gnarled-tree-standing-tall-amidst-the-ages-ai-generated-free-photo.jpg') no-repeat center center; background-size: cover; height: 80vh; display: flex; justify-content: center; align-items: center; position: relative; }
-    .overlay { background: rgba(0,0,0,0.6); text-align: center; color: #fff; padding: 20px; width: 100%; }
-    .overlay h2 { font-size: 3rem; }
-    button { background: #1446ff; color: #121212; border: none; padding: 10px 20px; font-size: 1.2rem; cursor: pointer; border-radius: 5px; transition: background 0.3s; }
-    button:hover { background: #aaa; }
-    .content { padding: 40px; }
-    .features { display: flex; justify-content: space-around; margin-top: 20px; }
-    .feature { background: #1c1c1c; padding: 20px; border-radius: 8px; width: 30%; text-align: center; }
-    footer { background: #181818; color: #f1f1f1; text-align: center; padding: 15px; margin-top: 40px; }
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+
+    body { 
+      font-family: 'Arial', sans-serif; 
+      background: url('https://raw.githubusercontent.com/pberzabal/practice/refs/heads/main/timeless-majesty-an-enchanting-portrait-of-the-majestic-grandeur-and-resilience-of-an-ancient-gnarled-tree-standing-tall-amidst-the-ages-ai-generated-free-photo.jpg') no-repeat center center fixed; /* Set the tree image as the background */
+      background-size: cover; /* Cover the entire screen */
+      color: #f1f1f1;
+      min-height: 100vh; /* Ensure the body takes full height */
+      display: flex;
+      flex-direction: column;
+    }
+
+    header { 
+      background: rgba(24, 24, 24, 0.6); /* Semi-transparent background for header */
+      padding: 20px; 
+      text-align: center; 
+    }
+
+    h1 { 
+      font-size: 3rem; 
+      color: #d4d9ff; 
+    }
+
+    nav ul { 
+      list-style: none; 
+      margin-top: 10px; 
+    }
+
+    nav ul li { 
+      display: inline; 
+      margin: 0 15px; 
+    }
+
+    nav a { 
+      color: #f1f1f1; 
+      text-decoration: none; 
+      font-weight: bold; 
+    }
+
+    nav a:hover { 
+      color: #b5e2fa; 
+    }
+
+    .hero { 
+      height: 80vh; /* Adjusted for better proportion */
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      position: relative; 
+      text-align: center;
+    }
+
+    .hero h2 { 
+      font-size: 3rem; 
+      color: #fff; /* White text to stand out on top of the background */
+    }
+
+    button { 
+      background: #1446ff; 
+      color: #121212; 
+      border: none; 
+      padding: 10px 20px; 
+      font-size: 1.2rem; 
+      cursor: pointer; 
+      border-radius: 5px; 
+      transition: background 0.3s; 
+    }
+
+    button:hover { 
+      background: #aaa; 
+    }
+
+    .content { 
+      padding: 40px; 
+      flex-grow: 1; /* Allow content section to grow and take remaining space */
+    }
+
+    .features { 
+      display: flex; 
+      justify-content: space-around; 
+      margin-top: 20px; 
+    }
+
+    .feature { 
+      background: rgba(0, 0, 0, 0.6); /* Optional, semi-transparent background for features */
+      padding: 20px; 
+      border-radius: 8px; 
+      width: 30%; 
+      text-align: center; 
+    }
+
+    footer { 
+      background: rgba(24, 24, 24, 0.6); /* Semi-transparent footer */
+      color: #f1f1f1; 
+      text-align: center; 
+      padding: 15px; 
+      margin-top: 40px;
+      margin-bottom: 0; /* Remove bottom margin */
+    }
+
     @media (max-width: 768px) {
-      .hero h2 { font-size: 2.5rem; }
-      .features { flex-direction: column; align-items: center; }
-      .feature { width: 80%; margin-bottom: 20px; }
-      nav ul li { display: block; margin: 10px 0; }
+      .hero h2 { 
+        font-size: 2.5rem; 
+      }
+
+      .features { 
+        flex-direction: column; 
+        align-items: center; 
+      }
+
+      .feature { 
+        width: 80%; 
+        margin-bottom: 20px; 
+      }
+
+      nav ul li { 
+        display: block; 
+        margin: 10px 0; 
+      }
     }
   </style>
 </head>
@@ -44,11 +145,9 @@
   </header>
 
   <section class="hero">
-    <div class="overlay">
-      <h2>Skill Tree</h2>
-      <p>Enter your class</p>
-      <button id="cta">Start Advancing</button>
-    </div>
+    <h2>Skill Tree</h2>
+    <p>Enter your class</p>
+    <button id="cta">Start Advancing</button>
   </section>
 
   <section class="content">
@@ -56,7 +155,7 @@
       <div class="feature">
         <h3>Base Class</h3>
         <p>The foundation for your character's progression.</p>
-        <p>Start with a broad foundation, learning the ropes of the game</p>
+        <p>Start with a broad foundation, learning the ropes of the game.</p>
       </div>
       <div class="feature">
         <h3>Advanced Class</h3>
@@ -66,7 +165,7 @@
       <div class="feature">
         <h3>Master Class</h3>
         <p>The peak of potential, with powerful abilities.</p>
-        <p>Reach the peak of your character's potential with extraordinary abilities and a unique</p>
+        <p>Reach the peak of your character's potential with extraordinary abilities and a unique approach.</p>
       </div>
     </div>
   </section>
@@ -74,9 +173,5 @@
   <footer>
     <p>&copy; 2025 Skill Tree</p>
   </footer>
-
-  <script>
-    document.getElementById("cta").addEventListener("click", () => alert("Loading your skill points..."));
-  </script>
 </body>
 </html>
