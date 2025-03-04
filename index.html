@@ -166,14 +166,40 @@ input[type="text"] {
     </nav>
   </header>
 
-  <section class="hero">
+   <section class="hero">
     <form action="javascript:void(0);">
         <label for="classInput"></label><br><br>
         <input type="text" id="classInput" placeholder="enter your class"><br><br>
         <button type="button" onclick="redirectToClassPage()">Start advancing</button>
     </form>
+</section>
 
-  </section>
+ <script>
+    function redirectToClassPage() {
+        // Get the value entered in the input field and clean up input
+        var classCode = document.getElementById('classInput').value.trim().toUpperCase();
+        
+        // Check if the input is empty
+        if (classCode === "") {
+            alert("Please enter a class code.");
+            return;
+        }
+
+        // Define a base URL for your site (adjust this to fit your actual URL structure)
+        var baseUrl = "https://pberzabal.github.io/practice/";
+
+        // Redirect based on the class code entered
+        if (classCode === "BSIT") {
+            window.location.href = baseUrl + "bsit"; // Redirect to BSIT page
+        } else if (classCode === "BSCSE") {
+            window.location.href = baseUrl + "bscse"; // Redirect to BSCSE page
+        } else if (classCode === "BSEE") {
+            window.location.href = baseUrl + "bsee"; // Redirect to BSEE page
+        } else {
+            alert("Sorry, no page found for this class.");
+        }
+    }
+</script>
 
   <section class="content">
     <div class="features">
