@@ -1,1 +1,1 @@
-https://pberzabal.github.io/practice/
+https://pberzabal.github.io/SKILL-TREE/
