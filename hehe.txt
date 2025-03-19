@@ -256,3 +256,98 @@ input[type="text"] {
   </footer>
 </body>
 </html>
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            display: none; /* Hide all sections initially */
+        }
+        .active {
+            display: block; /* Show only the active section */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('stat')">Stat</a></li>
+            <li><a href="#" onclick="showPage('classes')">Classes</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Sections -->
+    <div id="home" class="content active">
+        <h1>Welcome to My Homepage</h1>
+        <p>This is the main page content.</p>
+    </div>
+
+    <div id="about" class="content">
+        <h1>About Us</h1>
+        <p>This is the About page content.</p>
+    </div>
+
+    <div id="stat" class="content">
+        <h1>Statistics</h1>
+        <p>This is the Stats page content.</p>
+    </div>
+
+    <div id="classes" class="content">
+        <h1>Classes</h1>
+        <p>Information about available classes.</p>
+    </div>
+
+    <div id="contact" class="content">
+        <h1>Contact Us</h1>
+        <p>This is the Contact page content.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
+How It Works:
+✅ Clicking a menu link (e.g., "About", "Classes") dynamically changes the content.
+✅ No new page loads—everything stays on one index.html file.
+✅ No need for additional HTML pages or a new repository.
+✅ Uses <a> tags for a familiar website navigation feel.
