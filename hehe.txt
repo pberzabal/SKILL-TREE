@@ -1,9 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leveling - Anime Theme</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            display: none; /* Hide all sections initially */
+        }
+        .active {
+            display: block; /* Show only the active section */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: cream;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+<style>
 
 input[type="text"]::placeholder {
     color: #b5e2fa; /* Change this to any color you want for the placeholder text */
@@ -150,42 +178,69 @@ input[type="text"] {
         margin: 10px 0; 
       }
     }
-  </style>
+  
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Leveling</h1>
+
+    <!-- Navigation Menu -->
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Episodes</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('stat')">Stat</a></li>
+            <li><a href="#" onclick="showPage('classes')">Classes</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Skill Tree</h2>
-    <form action="javascript:void(0);">
-        <label for="classInput"></label><br><br>
-        <input type="text" id="classInput" placeholder="enter your class"><br><br>
-        <button type="button" onclick="redirectToClassPage()">Start advancing</button>
-    </form>
+    <!-- Page Sections -->
+    <div id="home" class="content active">
+        <h1>Welcome to My Homepage</h1>
+        <p>This is the main page content.</p>
+    </div>
 
-  </section>
+    <div id="about" class="content">
+        <h1>About Us</h1>
+        <p>This is the About page content.</p>
+    </div>
 
-  <section class="content">
+    <div id="stat" class="content">
+        <h1>Statistics</h1>
+        <p>This is the Stats page content.</p>
+    </div>
+
+    <div id="classes" class="content">
+        <h1>Classes</h1>
+        <p>Information about available classes.</p>
+    </div>
+
+    <div id="contact" class="content">
+        <h1>Contact Us</h1>
+        <p>This is the Contact page content.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+<section class="content">
     <div class="features">
       <div class="feature">
         <h3>Base Class</h3>
         <p>The foundation for your character's progression.</p>
-        <p>Start with a broad foundation, learning the ropes of the game.</p>
+        <p>Start with a broad foundation, learning the ropes of the system.</p>
       </div>
       <div class="feature">
         <h3>Advanced Class</h3>
-        <p>Specialized abilities and roles for deeper gameplay.</p>
+        <p>Specialized abilities and roles for deeper progression.</p>
         <p>Focus on one area to specialize and become more powerful.</p>
       </div>
       <div class="feature">
@@ -201,134 +256,3 @@ input[type="text"] {
   </footer>
 </body>
 </html>
-
-
-
-Sure! Let's break down each section of the HTML and CSS code:
-
-### **1. The `<head>` Section:**
-
-```html
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leveling - Anime Theme</title>
-  <style>
-    /* CSS styles go here */
-  </style>
-</head>
-```
-
-- **`<meta charset="UTF-8">`**: Defines the character encoding for the document as UTF-8, which includes most characters from all languages.
-- **`<meta name="viewport" content="width=device-width, initial-scale=1.0">`**: Ensures the page is responsive by setting the viewport width to match the device's width.
-- **`<title>Leveling - Anime Theme</title>`**: Sets the title of the web page, which appears in the browser's tab.
-- **`<style>`**: Inside this `<style>` tag, there are CSS styles that control the visual appearance of the webpage.
-
-### **2. The `<body>` Section:**
-
-The body of the HTML page contains the content and structure of the webpage. Let's go through it step by step:
-
-#### **Header Section:**
-
-```html
-<header>
-  <h1>Leveling</h1>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Episodes</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-```
-
-- **`<header>`**: This element contains the header section of the page, which includes the title of the site and the navigation menu.
-- **`<h1>`**: A top-level heading, which is the main title of the website ("Leveling").
-- **`<nav>`**: This is the navigation bar that contains an unordered list of links (`<ul>`), each representing a different page (Home, About, Episodes, Gallery, and Contact). These links are placeholders (using `#`).
-- **`<a>`**: These are the links that navigate to different sections of the site.
-
-#### **Hero Section:**
-
-```html
-<section class="hero">
-  <h2>Skill Tree</h2>
-  <form action="javascript:void(0);">
-    <label for="classInput"></label><br><br>
-    <input type="text" id="classInput" placeholder="enter your class"><br><br>
-    <button type="button" onclick="redirectToClassPage()">Start advancing</button>
-  </form>
-</section>
-```
-
-- **`<section class="hero">`**: A section with a class of `hero`, which typically contains large, eye-catching content or calls to action. This is the main focus area of the page.
-- **`<h2>`**: A secondary heading that introduces the content in this section. "Skill Tree" suggests that the page may be related to a character's progression in a game.
-- **`<form>`**: A form element to capture user input. The action attribute is `javascript:void(0);`, which prevents the page from reloading when the form is submitted. 
-- **`<input type="text">`**: This input field allows the user to type text, specifically the class of their character. The placeholder "enter your class" gives users a hint on what to input.
-- **`<button type="button">`**: A button that triggers the `redirectToClassPage()` JavaScript function when clicked, presumably to take the user to a page where they can start advancing their character.
-
-#### **Content Section:**
-
-```html
-<section class="content">
-  <div class="features">
-    <div class="feature">
-      <h3>Base Class</h3>
-      <p>The foundation for your character's progression.</p>
-      <p>Start with a broad foundation, learning the ropes of the game.</p>
-    </div>
-    <div class="feature">
-      <h3>Advanced Class</h3>
-      <p>Specialized abilities and roles for deeper gameplay.</p>
-      <p>Focus on one area to specialize and become more powerful.</p>
-    </div>
-    <div class="feature">
-      <h3>Master Class</h3>
-      <p>The peak of potential, with powerful abilities.</p>
-      <p>Reach the peak of your character's potential with extraordinary abilities and a unique approach.</p>
-    </div>
-  </div>
-</section>
-```
-
-- **`<section class="content">`**: A section that holds the main content of the page, here it includes a group of features.
-- **`<div class="features">`**: A wrapper for all feature items. It uses flexbox to display its children (feature items) side by side.
-- **`<div class="feature">`**: Each of these `div` elements represents a different class type (Base Class, Advanced Class, and Master Class). Each feature has a heading `<h3>` and a couple of paragraphs (`<p>`) explaining the class.
-  
-#### **Footer Section:**
-
-```html
-<footer>
-  <p>&copy; 2025 Skill Tree</p>
-</footer>
-```
-
-- **`<footer>`**: The footer section, which typically contains copyright information or links related to the bottom of the page.
-- **`<p>`**: A paragraph with the copyright symbol (`&copy;`) and the year (2025), as well as the name of the site, "Skill Tree."
-
-### **CSS Styles:**
-
-The CSS styles in the `<style>` tag at the beginning of the code help to define how the page should appear visually.
-
-- **`body`**: Sets a background image (a tree image) and defines other properties like text color, font family, and layout settings (flexbox to make it responsive).
-- **`header`**: Styles the header with a semi-transparent background, centered text, and spacing between navigation links.
-- **`input[type="text"]`**: Customizes the text input, making the placeholder text appear centered, transparent, and styled with a specific font and color.
-- **`.hero`**: Applies styles to the hero section, making it the focal point of the page with text centered and a larger size.
-- **`.content`**: Adds padding and lets the content grow to fill the remaining space of the page.
-- **`.features`**: Uses flexbox to display the feature items side by side, and the `.feature` class defines the visual style of each feature box.
-- **`footer`**: Similar to the header, with a semi-transparent background, text aligned to the center, and padding for spacing.
-- **Responsive Styles (media query)**: The code at the end adjusts the layout for smaller screens (less than 768px wide). It modifies font sizes, changes the flex layout of feature items to a column, and adjusts navigation links to be stacked vertically.
-
-### **JavaScript Function:**
-You have a placeholder JavaScript function in the button:
-```javascript
-<button type="button" onclick="redirectToClassPage()">Start advancing</button>
-```
-However, this function is not defined in the code you've shared. If defined, it would likely navigate the user to another page or update the view when clicked.
-
-### Summary:
-- The HTML structure contains a header, hero section (with input for class selection), content with features, and a footer.
-- The CSS provides visual styles, like the background image, text colors, and layout formatting (flexbox and media queries).
-- The page is structured with a focus on a character class selection for a game, using modern web design techniques (flexbox, responsive design).
