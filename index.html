@@ -106,6 +106,15 @@ input[type="text"] {
       padding: 40px; 
       flex-grow: 1; /* Allow content section to grow and take remaining space */
     }
+	/* Add these styles to hide non-active sections */
+     .content {
+  	display: none; /* Hide all sections by default */
+	}
+
+      .content.active {
+  	display: block; /* Show only the active section */
+	}
+
 
     .features { 
       display: flex; 
@@ -157,72 +166,93 @@ input[type="text"] {
     <h1>CROWN</h1>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="https://pberzabal.github.io/SKILL-TREE/about">About</a></li>
-        <li><a href="#">Stat</a></li>
-        <li><a href="#">Classes</a></li>
-        <li><a href="#">Contact</a></li>
+	<nav>
+        <ul>
+	    <li><a href="#" onclick="showPage('stat')">Stat</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+	    <li><a href="#" onclick="showPage('classes')">Classes</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Sections -->
+    <div id="home" class="content active">
+        <h1>Welcome to My Homepage</h1>
+        <p>This is the main page content.</p>
+    </div>
+
+    <div id="about" class="content">
+        <h1>About Us</h1>
+        <p>This is the About page content.</p>
+    </div>
+
+    <div id="stat" class="content">
+        <h1>Statistics</h1>
+        <p>This is the Stats page content.</p>
+    </div>
+
+    <div id="classes" class="content">
+        <h1>Classes</h1>
+        <p>Information about available classes.</p>
+    </div>
+
+    <div id="contact" class="content">
+        <h1>Contact Us</h1>
+        <p>This is the Contact page content.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+    // Hide all sections by removing the 'active' class
+    document.querySelectorAll('.content').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Show the selected section by adding the 'active' class
+    document.getElementById(pageId).classList.add('active');
+  if (pageId !== 'home') {
+            document.getElementById('hero').style.display = 'none';
+        } else {
+            // If the page is 'home', make sure the hero section is visible
+            document.getElementById('hero').style.display = 'block';
+       		}
+       }
+    </script>
       </ul>
     </nav>
-  </header>
+  </header>	
 
-   <section class="hero">
+  <section class="hero">
     <form action="javascript:void(0);">
         <label for="classInput"></label><br><br>
         <input type="text" id="classInput" placeholder="enter your class"><br><br>
         <button type="button" onclick="redirectToClassPage()">Start advancing</button>
     </form>
-</section>
+  </section>
 
- <script>
-    function redirectToClassPage() {
-        // Get the value entered in the input field and clean up input
-        var classCode = document.getElementById('classInput').value.trim().toUpperCase();
-        
-        // Check if the input is empty
-        if (classCode === "") {
-            alert("Please enter a class code.");
-            return;
-        }
+<section class="ClassiIntro">
 
-        // Define a base URL for your site (adjust this to fit your actual URL structure)
-        var baseUrl = "https://pberzabal.github.io/practice/";
-
-        // Redirect based on the class code entered
-        if (classCode === "BSIT") {
-            window.location.href = baseUrl + "bsit"; // Redirect to BSIT page
-        } else if (classCode === "BSCSE") {
-            window.location.href = baseUrl + "bscse"; // Redirect to BSCSE page
-        } else if (classCode === "BSEE") {
-            window.location.href = baseUrl + "bsee"; // Redirect to BSEE page
-        } else {
-            alert("Sorry, no page found for this class.");
-        }
-    }
-</script>
-
-  <section class="content">
     <div class="features">
       <div class="feature">
         <h3>Base Class</h3>
         <p>The foundation for your character's progression.</p>
-        <p>Start with a broad foundation, learning the ropes of the system.</p>
+        <p>Start with a broad foundation, learning the ropes of the game.</p>
       </div>
       <div class="feature">
         <h3>Advanced Class</h3>
-        <p>Specialized abilities and roles for deeper progression.</p>
+        <p>Specialized abilities and roles for deeper gameplay.</p>
         <p>Focus on one area to specialize and become more powerful.</p>
       </div>
       <div class="feature">
         <h3>Master Class</h3>
         <p>The peak of potential, with powerful abilities.</p>
         <p>Reach the peak of your character's potential with extraordinary abilities and a unique approach.</p>
+
       </div>
     </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 Skill Tree</p>
-  </footer>
 </body>
 </html>
+
+
